@@ -4,10 +4,9 @@ import styles from "./QuestionAnswer.module.scss";
 const QuestionAnswer = () => {
   return (
     <div className={styles.QuestionAnswer}>
-      <h2>Question & Answer</h2>
       <div className={styles.formGroup}>
         <label>RAG Collection</label>
-        <select>
+        <select className={styles.ragCollection}>
           <option>Select...</option>
         </select>
       </div>
@@ -17,15 +16,18 @@ const QuestionAnswer = () => {
       </div>
       <div className={styles.formGroup}>
         <label>Question</label>
-        <input type="text" placeholder="Enter question here" />
-      </div>
-      <div className={styles.formGroup}>
-        <label>Response</label>
-        <textarea readOnly></textarea>
+        <input
+          className={styles.QuestionAnswerInput}
+          type="text"
+          placeholder="Enter question here"
+        />
       </div>
       <div className={styles.formActions}>
         <button>Clear</button>
         <button>Submit</button>
+      </div>
+      <div className={styles.formGroup}>
+        <label>Response</label>
       </div>
     </div>
   );

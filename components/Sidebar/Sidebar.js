@@ -1,15 +1,19 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./Sidebar.module.scss";
 import { PiGradientLight } from "react-icons/pi";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { CiUser } from "react-icons/ci";
+import * as dispatcher from "../../redux/store/dispatchers";
+import { connect } from "react-redux";
 
-const Sidebar = ({ onSelection }) => {
+const Sidebar = ({ dispatchSelectedOption }) => {
   const [selected, setSelected] = useState("Question & Answer");
 
   const handleSelection = (option) => {
     setSelected(option);
-    onSelection(option);
+    dispatchSelectedOption(option);
   };
 
   return (
@@ -50,4 +54,4 @@ const Sidebar = ({ onSelection }) => {
   );
 };
 
-export default Sidebar;
+export default connect(null, dispatcher)(Sidebar);
