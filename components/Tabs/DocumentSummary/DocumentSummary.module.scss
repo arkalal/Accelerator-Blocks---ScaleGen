@@ -1,0 +1,52 @@
+.DocumentSummary {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select,
+    textarea,
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .formActions {
+    display: flex;
+    gap: 10px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:first-child {
+        background-color: #f0f0f0;
+      }
+
+      &:last-child {
+        background-color: #007bff;
+        color: #fff;
+      }
+    }
+  }
+}
