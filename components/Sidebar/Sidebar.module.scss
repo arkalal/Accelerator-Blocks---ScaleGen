@@ -1,22 +1,28 @@
 .Sidebar {
-  width: 15%;
+  width: 18%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   border-right: 1px solid #cfaa9b;
+  padding: 20px 10px;
 
   .SidebarOption {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 30px;
 
     .SidebarHeader {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 80%;
+      margin: 0 20px;
+
+      .SidebarHeaderTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
     }
 
     .SidebarBtns {
@@ -31,18 +37,20 @@
         outline: none;
         background-color: transparent;
         text-align: left;
+        width: 100%;
+        padding: 10px 20px;
+        cursor: pointer;
 
         &:hover {
           background-color: #ffd6cc;
-          padding: 10px 20px;
           border-radius: 10px;
         }
+      }
 
-        &.active {
-          background-color: #ffd6cc;
-          padding: 10px 20px;
-          border-radius: 10px;
-        }
+      .active {
+        background-color: #ffd6cc;
+        padding: 10px 20px;
+        border-radius: 10px;
       }
     }
   }
