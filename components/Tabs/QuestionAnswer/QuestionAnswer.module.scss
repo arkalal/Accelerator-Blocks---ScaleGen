@@ -5,6 +5,9 @@
     label {
       display: block;
       margin-bottom: 5px;
+      color: #714d3d;
+      font-weight: 500;
+      font-size: 15px;
     }
 
     select,
@@ -15,17 +18,42 @@
       border-radius: 5px;
     }
 
-    .ragCollection {
-      width: 25%;
-    }
-
-    .QuestionAnswerInput {
-      width: 100%;
-    }
-
     textarea {
       height: 200px;
       width: 100%;
+    }
+  }
+
+  .ragCollection {
+    select {
+      width: 25%;
+      margin-top: 10px;
+    }
+  }
+
+  .QADocument {
+    margin-top: 25px;
+
+    textarea {
+      margin-top: 10px;
+    }
+  }
+
+  .QAQuestion {
+    input {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .QAResponse {
+    margin-top: 20px;
+
+    div {
+      width: 100%;
+      height: 40px;
+      background-color: #fef6ee;
+      margin-top: 10px;
     }
   }
 

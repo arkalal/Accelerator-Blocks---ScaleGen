@@ -32,7 +32,15 @@ const Content = ({ selectedOption }) => {
         return <QuestionAnswer />;
     }
   };
-  return <div className={styles.Content}>{renderContent()}</div>;
+  return (
+    <div className={styles.Content}>
+      <div className={styles.ContentBlocks}>
+        <h2>Accelerator Blocks</h2>
+      </div>
+
+      <div className={styles.ContentBox}>{renderContent()}</div>
+    </div>
+  );
 };
 
 const mapStateToProps = ({ gradient }) => {
