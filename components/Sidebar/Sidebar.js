@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Sidebar.module.scss";
 import { PiGradientLight } from "react-icons/pi";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
@@ -8,11 +8,8 @@ import { CiUser } from "react-icons/ci";
 import * as dispatcher from "../../redux/store/dispatchers";
 import { connect } from "react-redux";
 
-const Sidebar = ({ dispatchSelectedOption }) => {
-  const [selected, setSelected] = useState("Question & Answer");
-
+const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
   const handleSelection = (option) => {
-    setSelected(option);
     dispatchSelectedOption(option);
   };
 
@@ -38,7 +35,7 @@ const Sidebar = ({ dispatchSelectedOption }) => {
           ].map((option) => (
             <button
               key={option}
-              className={selected === option ? "active" : ""}
+              className={selectedOption === option ? styles.active : ""}
               onClick={() => handleSelection(option)}
             >
               {option}
@@ -54,4 +51,8 @@ const Sidebar = ({ dispatchSelectedOption }) => {
   );
 };
 
-export default connect(null, dispatcher)(Sidebar);
+const mapStateToProps = ({ gradient }) => ({
+  selectedOption: gradient.selectedOption,
+});
+
+export default connect(mapStateToProps, dispatcher)(Sidebar);
