@@ -4,17 +4,25 @@ import styles from "./PDFExtraction.module.scss";
 const PDFExtraction = () => {
   return (
     <div className={styles.PDFExtraction}>
-      <h2>PDF Extraction</h2>
-      <div className={styles.formGroup}>
-        <label>Add file</label>
-        <input type="file" />
+      <div className={styles.PDFExtractionFileBox}>
+        <div className={styles.PDFExtractionAddFile}>
+          <label>Add file</label>
+
+          <div className={styles.dragFile}>
+            <span>Drag and drop or</span>
+            <input type="file" />
+          </div>
+          <span>Must be a PDF no larger than 10 MiB.</span>
+        </div>
+
+        <div className={styles.formActions}>
+          <button>Submit</button>
+        </div>
       </div>
-      <div className={styles.formGroup}>
+
+      <div className={styles.PDFExtractionResponse}>
         <label>Response</label>
-        <textarea readOnly></textarea>
-      </div>
-      <div className={styles.formActions}>
-        <button>Submit</button>
+        <div></div>
       </div>
     </div>
   );

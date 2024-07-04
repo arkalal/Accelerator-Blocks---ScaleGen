@@ -1,55 +1,165 @@
 .EntityExtraction {
-  .formGroup {
-    margin-bottom: 15px;
+  .EntityExtractionResponse {
+    margin-top: 30px;
 
     label {
-      display: block;
-      margin-bottom: 5px;
+      color: #714d3d;
+      font-weight: 500;
+      font-size: 15px;
     }
 
-    select,
-    textarea,
-    input {
+    div {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    textarea {
-      height: 100px;
-    }
-
-    input[type="checkbox"] {
-      width: auto;
-    }
-
-    button {
-      padding: 10px;
-      background-color: #f0f0f0;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      height: 40px;
+      background-color: #fef6ee;
+      margin-top: 10px;
     }
   }
 
-  .formActions {
+  .EntityExtractionBox {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .EntityExtractionDocument {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
 
-      &:first-child {
-        background-color: #f0f0f0;
+      label {
+        color: #714d3d;
+        font-weight: 500;
+        font-size: 15px;
       }
 
-      &:last-child {
-        background-color: #007bff;
-        color: #fff;
+      textarea {
+        width: 100%;
+        height: 150px;
+        border: 1px solid #321406;
+        padding: 10px;
+      }
+    }
+
+    .EntityExtractionFormActions {
+      width: 48%;
+      position: relative;
+
+      .formActions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        button {
+          padding: 12px 20px;
+          border: none;
+          cursor: pointer;
+          background-color: #f0f0f0;
+          color: gray;
+
+          &:first-child {
+            border: 1px solid black;
+            color: black;
+            background-color: transparent;
+          }
+        }
+      }
+
+      .EntityExtractionPanel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .EntityExtractionField,
+        .EntityExtractionType,
+        .EntityExtractionRequired {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          label {
+            color: #714d3d;
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+
+        .EntityExtractionField {
+          input {
+            padding: 10px;
+            border: 1px solid black;
+          }
+        }
+
+        .EntityExtractionType {
+          select {
+            padding: 10px;
+            border: 1px solid black;
+          }
+        }
+
+        .EntityExtractionRequired {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          input[type="checkbox"] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+
+          .checkmark {
+            position: relative;
+            height: 30px;
+            width: 30px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            cursor: pointer;
+          }
+
+          input[type="checkbox"]:checked + .checkmark {
+            background-color: #2196f3;
+            border-color: #2196f3;
+          }
+
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+          }
+
+          input[type="checkbox"]:checked + .checkmark:after {
+            display: block;
+          }
+        }
+      }
+
+      .EntityExtractionAddEntity {
+        margin-top: 20px;
+
+        button {
+          text-align: left;
+          background: transparent;
+          border: none;
+          outline: none;
+          margin-left: 20px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          font-weight: 500;
+        }
       }
     }
   }

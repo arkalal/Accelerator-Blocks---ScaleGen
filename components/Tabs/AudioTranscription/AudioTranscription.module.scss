@@ -1,38 +1,52 @@
 .AudioTranscription {
-  .formGroup {
-    margin-bottom: 15px;
+  .AudioTranscriptionResponse {
+    margin-top: 20px;
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="file"],
-    textarea {
+    div {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    textarea {
-      height: 100px;
+      height: 40px;
+      background-color: #fef6ee;
+      margin-top: 10px;
     }
   }
 
-  .formActions {
+  .AudioTranscriptionFileBox {
     display: flex;
     gap: 10px;
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .formActions {
+      align-self: flex-end;
+      button {
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: lightgray;
+        color: gray;
+      }
+    }
 
-      &:last-child {
-        background-color: #007bff;
-        color: #fff;
+    .AudioTranscriptionAddFile {
+      border: 1px dotted gray;
+      border-radius: 10px;
+      padding: 20px;
+      width: 60%;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      span {
+        // margin-top: 15px;
+        font-size: 12px;
+      }
+
+      .dragFile {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
     }
   }
