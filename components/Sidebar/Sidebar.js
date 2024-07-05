@@ -19,7 +19,7 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
         <div className={styles.SidebarHeader}>
           <div className={styles.SidebarHeaderTitle}>
             <PiGradientLight />
-            <span>gradient</span>
+            <span>ScaleGen</span>
           </div>
           <MdKeyboardDoubleArrowLeft />
         </div>

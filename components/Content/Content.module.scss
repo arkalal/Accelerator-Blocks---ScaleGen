@@ -1,7 +1,9 @@
+@import "../../styles/mixins.module.scss";
+
 .Content {
   width: 82%;
   //   padding: 20px;
-  background-color: #fff7ee;
+  background-color: $lightBlue;
 
   .ContentBlocks {
     background-color: white;

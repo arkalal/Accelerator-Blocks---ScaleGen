@@ -1,0 +1,17 @@
+$primary: #2e87d9;
+$selectedPrimary: #0c66b9;
+$secondaryBackground: #f4f4f4;
+$white: #ffffff;
+$borders: #e4e4e4;
+$error: #d32f2f;
+$grey: #ababab;
+$lightBlue: #d8ecff;
+
+@mixin response {
+  width: 100%;
+  min-height: 40px;
+  background-color: $lightBlue;
+  margin-top: 10px;
+  padding: 15px;
+  height: max-content;
+}

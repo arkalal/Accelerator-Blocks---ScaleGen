@@ -1,11 +1,14 @@
+@import "../../styles/mixins.module.scss";
+
 .Sidebar {
   width: 18%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  border-right: 1px solid #cfaa9b;
+  min-height: 100vh;
+  border-right: 1px solid $borders;
   padding: 20px 10px;
+  background-color: $primary;
 
   .SidebarOption {
     display: flex;
@@ -44,15 +47,16 @@
         width: 100%;
         padding: 10px 20px;
         cursor: pointer;
+        color: $white;
 
         &:hover {
-          background-color: #ffd6cc;
+          background-color: $selectedPrimary;
           border-radius: 10px;
         }
       }
 
       .active {
-        background-color: #ffd6cc;
+        background-color: $selectedPrimary;
         padding: 10px 20px;
         border-radius: 10px;
       }
