@@ -24,7 +24,7 @@ const QuestionAnswer = () => {
       },
       include_sources: true,
       max_tokens: 500,
-      temperature: 0,
+      temperature: 0.9,
       limit: 10,
     };
 
