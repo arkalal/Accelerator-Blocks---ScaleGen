@@ -7,6 +7,8 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { CiUser } from "react-icons/ci";
 import * as dispatcher from "../../redux/store/dispatchers";
 import { connect } from "react-redux";
+import scaleGenLogo from "../../assets/images/logo_white.png";
+import Image from "next/image";
 
 const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
   const handleSelection = (option) => {
@@ -18,10 +20,12 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
       <div className={styles.SidebarOption}>
         <div className={styles.SidebarHeader}>
           <div className={styles.SidebarHeaderTitle}>
-            <PiGradientLight />
-            <span>ScaleGen</span>
+            <Image className={styles.Logo} src={scaleGenLogo} alt=""></Image>
           </div>
-          <MdKeyboardDoubleArrowLeft />
+
+          <MdKeyboardDoubleArrowLeft
+            className={styles.SidebarHeaderBackArrow}
+          />
         </div>
         <div className={styles.SidebarBtns}>
           {[
@@ -44,7 +48,7 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
         </div>
       </div>
       <div className={styles.SidebarAccount}>
-        <CiUser />
+        <CiUser className={styles.SidebarUserIcon} />
         <span>Account</span>
       </div>
     </div>

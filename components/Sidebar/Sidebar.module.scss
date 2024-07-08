@@ -21,10 +21,21 @@
       align-items: center;
       margin: 0 20px;
 
+      .SidebarHeaderBackArrow {
+        font-size: 20px;
+        color: $white;
+      }
+
       .SidebarHeaderTitle {
         display: flex;
         align-items: center;
         gap: 10px;
+
+        .Logo {
+          object-fit: contain;
+          width: 120px;
+          height: auto;
+        }
 
         span {
           font-weight: bold;
@@ -68,5 +79,13 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+
+    .SidebarUserIcon {
+      color: $white;
+    }
+
+    span {
+      color: $white;
+    }
   }
 }
