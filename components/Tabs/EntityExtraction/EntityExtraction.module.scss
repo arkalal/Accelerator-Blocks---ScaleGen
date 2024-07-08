@@ -37,6 +37,7 @@
         height: 150px;
         border: 1px solid #321406;
         padding: 10px;
+        font-size: $fontSize;
       }
     }
 
@@ -90,6 +91,7 @@
           input {
             padding: 10px;
             border: 1px solid black;
+            font-size: $fontSize;
           }
         }
 

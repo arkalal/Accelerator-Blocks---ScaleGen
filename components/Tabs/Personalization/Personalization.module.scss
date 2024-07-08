@@ -15,6 +15,7 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: $fontSize;
     }
   }
 
@@ -28,6 +29,7 @@
       height: 150px;
       border: 1px solid #321406;
       padding: 10px;
+      font-size: $fontSize;
     }
   }
 
@@ -63,6 +65,7 @@
           width: 100%;
           padding: 14px;
           border: 1px solid black;
+          font-size: $fontSize;
         }
       }
 

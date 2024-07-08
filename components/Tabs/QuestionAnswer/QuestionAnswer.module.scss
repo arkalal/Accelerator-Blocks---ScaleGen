@@ -18,6 +18,7 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: $fontSize;
     }
 
     textarea {
@@ -38,6 +39,7 @@
 
     textarea {
       margin-top: 10px;
+      font-size: $fontSize;
     }
   }
 
@@ -45,6 +47,7 @@
     input {
       width: 100%;
       margin-top: 10px;
+      font-size: $fontSize;
     }
   }
 
