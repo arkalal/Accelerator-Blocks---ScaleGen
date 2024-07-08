@@ -30,8 +30,8 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
             "Sentiment Analysis",
             "Personalization",
             "Entity Extraction",
-            "PDF Extraction",
-            "Audio Transcription",
+            // "PDF Extraction",
+            // "Audio Transcription",
           ].map((option) => (
             <button
               key={option}
