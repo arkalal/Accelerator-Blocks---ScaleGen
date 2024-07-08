@@ -17,7 +17,8 @@
 
   .EntityExtractionBox {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 60px;
     width: 100%;
 
     .EntityExtractionDocument {
@@ -99,6 +100,14 @@
           select {
             padding: 10px;
             border: 1px solid black;
+            font-size: 14px;
+            height: 40px;
+            background-color: white;
+            text-align: center;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            appearance: none;
           }
         }
 
@@ -147,7 +156,7 @@
       }
 
       .EntityExtractionAddEntity {
-        margin-top: 20px;
+        margin-top: 70px;
 
         button {
           text-align: left;
@@ -160,6 +169,7 @@
           gap: 5px;
           cursor: pointer;
           font-weight: 500;
+          font-size: $textFontSize;
         }
       }
     }
