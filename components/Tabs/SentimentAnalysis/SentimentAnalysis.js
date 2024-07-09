@@ -40,17 +40,17 @@ const SentimentAnalysis = () => {
         ></textarea>
       </div>
 
-      <div className={styles.formActions}>
-        <button>Clear</button>
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-
       <div className={`${styles.formGroup} ${styles.SentAnalysTraining}`}>
         <label>Training Examples (optional)</label>
         <button>
           {" "}
           <FaPlus /> Add new example
         </button>
+      </div>
+
+      <div className={styles.formActions}>
+        <button>Clear</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
 
       <div className={`${styles.formGroup} ${styles.SentAnalysResponse}`}>

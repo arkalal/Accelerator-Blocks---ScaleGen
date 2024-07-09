@@ -28,10 +28,10 @@ const EntityExtraction = () => {
     setFields(newFields);
   };
 
-  const handleCheckboxChange = (id, event) => {
+  const handleCheckboxChange = (id) => {
     const newFields = fields.map((field) => {
       if (field.id === id) {
-        return { ...field, required: event.target.checked };
+        return { ...field, required: !field.required };
       }
       return field;
     });
@@ -77,10 +77,14 @@ const EntityExtraction = () => {
                 <label>Required?</label>
                 <input
                   type="checkbox"
+                  id={`required-${field.id}`}
                   checked={field.required}
-                  onChange={(e) => handleCheckboxChange(field.id, e)}
+                  onChange={() => handleCheckboxChange(field.id)}
                 />
-                <span className={styles.checkmark}></span>
+                <label
+                  htmlFor={`required-${field.id}`}
+                  className={styles.checkmark}
+                ></label>
               </div>
 
               {index > 0 && (
