@@ -41,11 +41,6 @@ const DocumentSummary = () => {
         ></textarea>
       </div>
 
-      <div className={styles.formActions}>
-        <button>Clear</button>
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-
       <div className={`${styles.formGroup} ${styles.DocSummaryLength}`}>
         <label>Summary Length (optional)</label>
         <select
@@ -64,6 +59,11 @@ const DocumentSummary = () => {
           {" "}
           <FaPlus /> Add new example
         </button>
+      </div>
+
+      <div className={styles.formActions}>
+        <button>Clear</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
 
       <div className={`${styles.formGroup} ${styles.DocSummaryResponse}`}>

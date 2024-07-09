@@ -23,9 +23,9 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
             <Image className={styles.Logo} src={scaleGenLogo} alt=""></Image>
           </div>
 
-          <MdKeyboardDoubleArrowLeft
+          {/* <MdKeyboardDoubleArrowLeft
             className={styles.SidebarHeaderBackArrow}
-          />
+          /> */}
         </div>
         <div className={styles.SidebarBtns}>
           {[
@@ -47,10 +47,11 @@ const Sidebar = ({ selectedOption, dispatchSelectedOption }) => {
           ))}
         </div>
       </div>
-      <div className={styles.SidebarAccount}>
+
+      {/* <div className={styles.SidebarAccount}>
         <CiUser className={styles.SidebarUserIcon} />
         <span>Account</span>
-      </div>
+      </div> */}
     </div>
   );
 };

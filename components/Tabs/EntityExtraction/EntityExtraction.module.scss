@@ -2,7 +2,7 @@
 
 .EntityExtraction {
   .EntityExtractionResponse {
-    margin-top: 30px;
+    margin-top: 20px;
 
     label {
       color: #714d3d;
@@ -12,6 +12,28 @@
 
     div {
       @include response();
+    }
+  }
+
+  .formActions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 40px;
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      color: gray;
+      font-size: $fontSize;
+
+      &:first-child {
+        border: 1px solid black;
+        color: black;
+        background-color: transparent;
+      }
     }
   }
 
@@ -43,36 +65,14 @@
     }
 
     .EntityExtractionFormActions {
-      width: 48%;
+      width: 100%;
       position: relative;
-
-      .formActions {
-        display: flex;
-        gap: 10px;
-        justify-content: flex-end;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-
-        button {
-          padding: 12px 20px;
-          border: none;
-          cursor: pointer;
-          background-color: #f0f0f0;
-          color: gray;
-
-          &:first-child {
-            border: 1px solid black;
-            color: black;
-            background-color: transparent;
-          }
-        }
-      }
 
       .EntityExtractionPanel {
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-bottom: 20px;
 
         .EntityExtractionField,
         .EntityExtractionType,
@@ -153,17 +153,23 @@
             display: block;
           }
         }
+
+        .entityTrash {
+          font-size: $fontSize;
+          color: red;
+          cursor: pointer;
+          margin-top: 35px;
+        }
       }
 
       .EntityExtractionAddEntity {
-        margin-top: 70px;
+        margin-top: 20px;
 
         button {
           text-align: left;
           background: transparent;
           border: none;
           outline: none;
-          margin-left: 20px;
           display: flex;
           align-items: center;
           gap: 5px;
