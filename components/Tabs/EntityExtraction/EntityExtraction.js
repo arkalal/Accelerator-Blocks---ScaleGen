@@ -81,10 +81,14 @@ const EntityExtraction = () => {
                   checked={field.required}
                   onChange={() => handleCheckboxChange(field.id)}
                 />
-                <label
-                  htmlFor={`required-${field.id}`}
-                  className={styles.checkmark}
-                ></label>
+                <div className={styles.checkmarkBox}>
+                  <label
+                    htmlFor={`required-${field.id}`}
+                    className={`${styles.checkmark} ${
+                      field.required ? styles.checked : ""
+                    }`}
+                  ></label>
+                </div>
               </div>
 
               {index > 0 && (
