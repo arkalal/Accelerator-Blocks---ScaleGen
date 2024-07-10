@@ -6,6 +6,9 @@ const Personalization = () => {
   const [Values, setValues] = useState({ document: "", target: "" });
   const [ResponseData, setResponseData] = useState(null);
 
+  console.log("document", Values.document);
+  console.log("target", Values.target);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,7 +39,9 @@ const Personalization = () => {
         <label>Document</label>
         <textarea
           value={Values.document}
-          onChange={(e) => setValues({ document: e.target.value })}
+          onChange={(e) =>
+            setValues({ document: e.target.value, target: Values.target })
+          }
           placeholder="Enter document context here"
         ></textarea>
       </div>
@@ -50,7 +55,9 @@ const Personalization = () => {
               type="text"
               placeholder="Enter description of audience here"
               value={Values.target}
-              onChange={(e) => setValues({ target: e.target.value })}
+              onChange={(e) =>
+                setValues({ document: Values.document, target: e.target.value })
+              }
             />
           </div>
 

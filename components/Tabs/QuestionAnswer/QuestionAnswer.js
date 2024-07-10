@@ -17,7 +17,7 @@ const QuestionAnswer = () => {
         },
       ],
       stream: false,
-      knowledge_base_id: "test-2",
+      knowledge_base_id: "jayant_test",
       use_context: true,
       context_filter: {
         doc_ids: [],
