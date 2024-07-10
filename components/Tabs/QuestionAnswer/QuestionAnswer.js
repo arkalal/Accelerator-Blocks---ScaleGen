@@ -44,10 +44,12 @@ const QuestionAnswer = () => {
           <option>Select...</option>
         </select>
       </div>
-      <div className={`${styles.formGroup} ${styles.QADocument}`}>
+
+      {/* <div className={`${styles.formGroup} ${styles.QADocument}`}>
         <label>Document</label>
         <textarea placeholder="Enter document context here"></textarea>
-      </div>
+      </div> */}
+
       <div className={`${styles.formGroup} ${styles.QAQuestion}`}>
         <label>Question</label>
         <input
@@ -57,10 +59,12 @@ const QuestionAnswer = () => {
           onChange={(e) => setQuestion(e.target.value)}
         />
       </div>
+
       <div className={styles.formActions}>
         <button>Clear</button>
         <button onClick={handleSubmit}>Submit</button>
       </div>
+
       <div className={`${styles.formGroup} ${styles.QAResponse}`}>
         <label>Response</label>
         <div> {ResponseData} </div>
