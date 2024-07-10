@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./QuestionAnswer.module.scss";
 import axios from "../../../axios/api";
 
 const QuestionAnswer = () => {
-  const [Question, setQuestion] = useState("");
-  const [ResponseData, setResponseData] = useState(null);
+  const [question, setQuestion] = useState("");
+  const [responseData, setResponseData] = useState(null);
+  const [knowledgeBases, setKnowledgeBases] = useState([]);
+  const [selectedKnowledgeBase, setSelectedKnowledgeBase] = useState("");
+
+  useEffect(() => {
+    const fetchKnowledgeBases = async () => {
+      try {
+        const res = await axios.get("list-knowledge-bases");
+        setKnowledgeBases(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchKnowledgeBases();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,11 +28,11 @@ const QuestionAnswer = () => {
       messages: [
         {
           role: "user",
-          content: Question,
+          content: question,
         },
       ],
       stream: false,
-      knowledge_base_id: "jayant_test",
+      knowledge_base_id: selectedKnowledgeBase,
       use_context: true,
       context_filter: {
         doc_ids: [],
@@ -40,15 +55,18 @@ const QuestionAnswer = () => {
     <div className={styles.QuestionAnswer}>
       <div className={`${styles.formGroup} ${styles.ragCollection}`}>
         <label>RAG Collection</label>
-        <select>
-          <option>Select...</option>
+        <select
+          value={selectedKnowledgeBase}
+          onChange={(e) => setSelectedKnowledgeBase(e.target.value)}
+        >
+          <option value="">Select...</option>
+          {knowledgeBases.map((kb) => (
+            <option key={kb.id} value={kb.id}>
+              {kb.name}
+            </option>
+          ))}
         </select>
       </div>
-
-      {/* <div className={`${styles.formGroup} ${styles.QADocument}`}>
-        <label>Document</label>
-        <textarea placeholder="Enter document context here"></textarea>
-      </div> */}
 
       <div className={`${styles.formGroup} ${styles.QAQuestion}`}>
         <label>Question</label>
@@ -67,7 +85,7 @@ const QuestionAnswer = () => {
 
       <div className={`${styles.formGroup} ${styles.QAResponse}`}>
         <label>Response</label>
-        <div> {ResponseData} </div>
+        <div>{responseData}</div>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import styles from "./EntityExtraction.module.scss";
 import { FaPlus, FaTrash } from "react-icons/fa6";
+import axios from "../../../axios/api";
 
 const EntityExtraction = () => {
   const [fields, setFields] = useState([
     { id: 1, fieldName: "", type: "string", required: false },
   ]);
+  const [document, setDocument] = useState("");
+  const [response, setResponse] = useState(null);
 
   const handleAddField = () => {
     setFields([
@@ -38,12 +41,40 @@ const EntityExtraction = () => {
     setFields(newFields);
   };
 
+  const handleSubmit = async () => {
+    const schema = {};
+    fields.forEach((field) => {
+      schema[field.fieldName] = {
+        required: field.required,
+        type: field.type,
+      };
+    });
+
+    const body = {
+      document,
+      schema,
+      model: "gpt-3.5-turbo",
+    };
+
+    try {
+      const res = await axios.post("blocks/extract", body);
+      setResponse(res.data);
+      console.log("response", res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.EntityExtraction}>
       <div className={styles.EntityExtractionBox}>
         <div className={styles.EntityExtractionDocument}>
           <label>Document</label>
-          <textarea placeholder="Enter document context here"></textarea>
+          <textarea
+            placeholder="Enter document context here"
+            value={document}
+            onChange={(e) => setDocument(e.target.value)}
+          ></textarea>
         </div>
 
         <div className={styles.EntityExtractionFormActions}>
@@ -110,12 +141,12 @@ const EntityExtraction = () => {
 
       <div className={styles.formActions}>
         <button>Clear</button>
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
 
       <div className={styles.EntityExtractionResponse}>
         <label>Response</label>
-        <div></div>
+        <div>{JSON.stringify(response, null, 2)}</div>
       </div>
     </div>
   );
