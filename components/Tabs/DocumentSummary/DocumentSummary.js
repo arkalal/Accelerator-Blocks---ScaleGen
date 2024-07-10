@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa6";
 import axios from "../../../axios/api";
 
 const DocumentSummary = () => {
-  const [Values, setValues] = useState({ document: "", length: "" });
+  const [Values, setValues] = useState({ document: "", length: "short" });
   const [ResponseData, setResponseData] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -35,7 +35,9 @@ const DocumentSummary = () => {
       <div className={`${styles.formGroup} ${styles.DocSummaryDocument}`}>
         <label>Document</label>
         <textarea
-          onChange={(e) => setValues({ document: e.target.value })}
+          onChange={(e) =>
+            setValues({ document: e.target.value, length: Values.length })
+          }
           placeholder="Enter document context here"
           value={Values.document}
         ></textarea>
@@ -45,7 +47,9 @@ const DocumentSummary = () => {
         <label>Summary Length (optional)</label>
         <select
           value={Values.length}
-          onChange={(e) => setValues({ length: e.target.value })}
+          onChange={(e) =>
+            setValues({ document: Values.document, length: e.target.value })
+          }
         >
           <option disabled>Select...</option>
           <option>short</option>
